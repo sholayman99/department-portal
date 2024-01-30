@@ -1,6 +1,6 @@
 /*
 * Author : Md. Sholayman
-* Description: This is the file where router are being hold.
+* Description: This file contains all the api end point of the project.
 *  Date: 30 January  2024.
 * */
 

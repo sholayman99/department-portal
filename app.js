@@ -1,6 +1,6 @@
 /*
 * Author : Md. Sholayman
-* Description: This is the file where all the config of the project are being hold.
+* Description: This file contains all the config of the project.
 * Date: 30 January  2024.
 * */
 
