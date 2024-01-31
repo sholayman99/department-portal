@@ -1,7 +1,7 @@
 /*
 * Author : Md. Sholayman
 * Description: This file contains all the controller for others request.
-* Date: 30 January  2024.
+* Date: 31 January  2024.
 * */
 
 //controller for slider
