@@ -18,6 +18,7 @@ const dataSchema = mongoose.Schema({
         age:{type:String, required:true},
         hobby:{type:String, required:true},
         mobile:{type:String, required:true},
+        year:{type:String,required:true},
     },
     {timestamps:true , versionKey:false})
 

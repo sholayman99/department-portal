@@ -10,6 +10,6 @@ exports.findTeachers = async (req,res)=>{
 }
 
 //find teachers details controller
-exports.findStaffTeachers = async (req,res)=>{
+exports.findTeachersDetails = async (req,res)=>{
 
 }

@@ -7,10 +7,10 @@
 const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
-        userID:{type:mongoose.Schema.Types.ObjectId , required:true},
         teacherName:{type:String,required:true},
         avatar:{type:String,required:true},
-        mobile:{type:String,required:true}
+        mobile:{type:String,required:true},
+        email:{type:String,required:true}
     },
     {timestamps:true , versionKey:false})
 
