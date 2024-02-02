@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 
 exports.encodeToken = (email,userID) =>{
     let key = "123-abc-xyz";
-    let expires = {expiresIn: "48hrs"};
+    let expires = {expiresIn: "168hrs"};
     let payload ={email:email,userID:userID};
      return jwt.sign(payload,key,expires);
 };

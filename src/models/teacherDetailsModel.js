@@ -7,7 +7,7 @@
 const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
-        teacherID:{type:mongoose.Schema.Types.ObjectId , required:true},
+        userID:{type:mongoose.Schema.Types.ObjectId , required:true},
         division:{type:String, required:true},
         dis:{type:String, required:true},
         ps:{type:String, required:true},

@@ -7,7 +7,7 @@
 const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
-        studentID:{type:mongoose.Schema.Types.ObjectId , required:true},
+        userID:{type:mongoose.Schema.Types.ObjectId , required:true},
         division:{type:String, required:true},
         dis:{type:String, required:true},
         ps:{type:String, required:true},
@@ -22,4 +22,5 @@ const dataSchema = mongoose.Schema({
     },
     {timestamps:true , versionKey:false})
 
-const dataModel = mongoose.model("studentdetails",dataSchema);
+const studentDetailModel = mongoose.model("studentdetails",dataSchema);
+module.exports = studentDetailModel

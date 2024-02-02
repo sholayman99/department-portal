@@ -7,9 +7,13 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const authVerifyMiddleware = require("../middlewares/authVerifyMiddleware")
 
 router.post("/createAccount", userController.createAccount);
+router.post("/verifyAccount/:email/:otp", userController.verifyAccount);
 router.post("/login", userController.login);
+
+
 
 
 module.exports=router;
