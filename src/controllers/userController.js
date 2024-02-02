@@ -37,18 +37,14 @@ exports.verifyAccount = async (req,res)=>{
 exports.login = async (req,res)=>{
    let data = await loginService(req);
    if(data['status']==="success"){
-       if(data['message']==="login successfully"){
            let cookieOption={
                expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
                httpOnly:false
            }
            res.cookie("token",data['token'],cookieOption);
            return res.status(200).json(data);
-       }else{
-           return res.status(200).json(data);
-       }
-   }else{
-       return res.status(400).json(data);
+       } else{
+       return res.status(200).json(data);
    }
 }
 

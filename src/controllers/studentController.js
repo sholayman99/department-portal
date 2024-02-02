@@ -4,12 +4,24 @@
 * Date: 31 January  2024.
 * */
 
-//find students controller
-exports.findStudent = async (req,res)=>{
+const {readStudentsService,readStudentsDetailService} = require("../services/studentService")
 
+//find students controller
+exports.readStudents = async (req,res)=>{
+   let data = await readStudentsService(req);
+   if(data['status']==="success"){
+       res.status(200).json(data);
+   }else{
+       res.status(400).json(data);
+   }
 }
 
 //find students details controller
-exports.findStudentDetails = async (req,res)=>{
-
+exports.readStudentDetails = async (req,res)=>{
+    let data = await readStudentsDetailService(req);
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
 }
