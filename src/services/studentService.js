@@ -4,10 +4,8 @@
 * Date: 31 January  2024.
 * */
 
-const mongoose = require("mongoose");
-const ObjectId = mongoose.Types.ObjectId;
 const studentModel = require("../models/studentModel");
-const studentDetailModel = require("../models/studentDetailsModel")
+
 
 //find teachers controller
 const readStudentsService = async (req)=>{
@@ -25,7 +23,8 @@ const readStudentsService = async (req)=>{
 //find teachers details controller
 const readStudentsDetailService = async (req)=>{
 try {
-
+     let id = req.params.id;
+     let data = await studentModel.find({_id:id})
     return {status:"success" , data:data}
 }catch (e) {
     return {status:"failed" , data:e.message}

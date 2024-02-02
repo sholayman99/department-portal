@@ -7,8 +7,12 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
+const teacherController = require("../controllers/teacherController")
+const staffController = require("../controllers/staffController")
 const studentController = require("../controllers/studentController")
 const authVerifyMiddleware = require("../middlewares/authVerifyMiddleware")
+
+
 
 //user
 router.post("/createAccount", userController.createAccount);
@@ -19,6 +23,14 @@ router.post("/login", userController.login);
 router.get("/readStudents" , studentController.readStudents);
 router.get("/readStudentDetails/:id",authVerifyMiddleware, studentController.readStudentDetails);
 
+//teachers
+router.get("/readTeachers" , teacherController.readTeachers);
+router.get("/readTeacherDetails/:id",authVerifyMiddleware, teacherController.readTeacherDetails);
+
+
+//staffs
+router.get("/readStaffs" , staffController.readStaffs);
+router.get("/readStaffDetails/:id",authVerifyMiddleware, staffController.readStaffDetails);
 
 
 

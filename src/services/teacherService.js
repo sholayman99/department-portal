@@ -5,11 +5,28 @@
 * */
 
 //find teachers controller
-const findTeachersService = async (req,res)=>{
-
+const teacherModel = require("../models/teacherModel");
+const readTeachersService = async (req, res)=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await teacherModel.aggregate([
+            matchStage
+        ]);
+        return {status:"success" , data:data}
+    }catch (e) {
+        return {status:"failed" , data:e.message}
+    }
 }
 
 //find teachers details controller
-const findTeachersDetailsService = async (req,res)=>{
-
+const readTeacherDetailsService = async (req,res)=>{
+    try {
+        let id = req.params.id;
+        let data = await teacherModel.find({_id:id})
+        return {status:"success" , data:data}
+    }catch (e) {
+        return {status:"failed" , data:e.message}
+    }
 }
+
+module.exports ={readTeachersService,readTeacherDetailsService}
