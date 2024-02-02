@@ -8,9 +8,10 @@ const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
     email:{ type:String, required:true, unique:true, lowercase:true },
-    password:{type:String,required:true},
-    otp:{type:String,required:true}
+    password:{type:String,required:true}
 },
 {timestamps:true , versionKey:false})
 
-const dataModel = mongoose.model("users",dataSchema);
+const userModel = mongoose.model("users",dataSchema);
+
+module.exports = userModel;
