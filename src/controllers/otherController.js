@@ -4,27 +4,45 @@
 * Date: 31 January  2024.
 * */
 
+
+const {findSliderService,findEventService,findProgrammeService,findGalleryService} = require("../services/otherService")
+
 //controller for slider
 exports.findSliders = async (req,res)=>{
-
+       let data = await findSliderService();
+       if(data['status']==="success"){
+           res.status(200).json(data);
+       }else{
+            res.status(400).json(data);
+       }
 }
 
 //controller for programme
-exports.findProgramme = async (req,res)=>{
-
+exports.findProgrammes = async (req,res)=>{
+    let data = await findProgrammeService();
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
 }
 
 //controller for event
-exports.findEvent = async (req,res)=>{
-
+exports.findEvents = async (req,res)=>{
+    let data = await findEventService();
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
 }
 
 //controller for gallery
 exports.findGallery = async (req,res)=>{
-
-}
-
-//controller for event
-exports.findEvent = async (req,res)=>{
-
+    let data = await findGalleryService();
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
 }

@@ -12,4 +12,5 @@ const dataSchema = mongoose.Schema({
     },
     {timestamps:true , versionKey:false})
 
-const dataModel = mongoose.model("programmes",dataSchema);
+const programmeModel = mongoose.model("programmes",dataSchema);
+module.exports = programmeModel;

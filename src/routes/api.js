@@ -10,6 +10,7 @@ const userController = require("../controllers/userController");
 const teacherController = require("../controllers/teacherController")
 const staffController = require("../controllers/staffController")
 const studentController = require("../controllers/studentController")
+const otherController = require("../controllers/otherController");
 const authVerifyMiddleware = require("../middlewares/authVerifyMiddleware")
 
 
@@ -32,6 +33,10 @@ router.get("/readTeacherDetails/:id",authVerifyMiddleware, teacherController.rea
 router.get("/readStaffs" , staffController.readStaffs);
 router.get("/readStaffDetails/:id",authVerifyMiddleware, staffController.readStaffDetails);
 
-
+//others
+router.get("/findEvents" , otherController.findEvents);
+router.get("/findGallery" , otherController.findGallery);
+router.get("/findProgrammes" , otherController.findProgrammes);
+router.get("/findSliders" , otherController.findSliders);
 
 module.exports=router;

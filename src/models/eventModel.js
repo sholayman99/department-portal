@@ -13,4 +13,5 @@ const dataSchema = mongoose.Schema({
     },
     {timestamps:true , versionKey:false})
 
-const dataModel = mongoose.model("events",dataSchema);
+const eventModel = mongoose.model("events",dataSchema);
+module.exports=eventModel;

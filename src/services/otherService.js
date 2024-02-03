@@ -4,27 +4,55 @@
 * Date: 31 January  2024.
 * */
 
-//controller for slider
-exports.findSliders = async (req,res)=>{
+const eventModel = require("../models/eventModel");
+const galleryModel = require("../models/galleryModel");
+const programmeModel = require("../models/programmeModel");
+const sliderModel = require("../models/sliderModel");
 
+//controller for slider
+const findSliderService = async ()=>{
+   try {
+      let matchStage = {$match:{}};
+      let data = await sliderModel.aggregate([matchStage]);
+      return {status:"success" , data:data};
+   }catch (e) {
+       return {status:"error" , data:e.message};
+   }
 }
 
 //controller for programme
-exports.findProgramme = async (req,res)=>{
-
+const findProgrammeService = async ()=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await programmeModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
 }
 
 //controller for event
-exports.findEvent = async (req,res)=>{
-
+const findEventService = async ()=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await eventModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
 }
 
 //controller for gallery
-exports.findGallery = async (req,res)=>{
-
+const findGalleryService = async ()=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await galleryModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
 }
 
-//controller for event
-exports.findEvent = async (req,res)=>{
 
-}
+
+module.exports ={findSliderService,findEventService,findProgrammeService,findGalleryService};

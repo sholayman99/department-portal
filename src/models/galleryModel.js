@@ -11,4 +11,5 @@ const dataSchema = mongoose.Schema({
     },
     {timestamps:true , versionKey:false})
 
-const dataModel = mongoose.model("gallery",dataSchema);
+const galleryModel = mongoose.model("galleries",dataSchema);
+module.exports = galleryModel;
