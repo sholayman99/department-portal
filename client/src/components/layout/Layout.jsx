@@ -2,12 +2,12 @@ import React from 'react';
 import AppNavbar from "./AppNavbar.jsx";
 import Footer from "./Footer.jsx";
 
-const Layout = ({children}) => {
+const Layout = ( {children}) => {
     return (
         <>
-            <AppNavbar />
+         <AppNavbar />
             {children}
-            <Footer />
+         <Footer />
         </>
     );
 };
