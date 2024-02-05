@@ -31,12 +31,16 @@ const AppNavbar = () => {
                 <NavLink to={"/contact"} className={({isActive}) => isActive?"font-semibold"+
                     " underline text-primary text-md" : "text-md"}>CONTACT</NavLink>
             </li>
+            <li>
+                <input type="text" placeholder="Sarch students"
+                       className="input input-bordered input-primary w-full max-w-xs"/>
+            </li>
 
         </>
     );
 
     return (
-        <div className="navbar z-40 top-0 r-0 bg-base-100 h-20 w-full shadow-xl fixed">
+        <div className="navbar z-40 top-0 r-0 bg-base-100 h-20 max-w-[1400px] shadow-xl fixed">
             <div className="navbar-start">
                 <details className="dropdown lg:hidden">
                     <summary className="m-1 border-none btn">

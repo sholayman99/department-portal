@@ -8,7 +8,7 @@ import DepMemberPage from "./pages/DepMemberPage.jsx";
 
 const App = () => {
     return (
-        <div className={"max-w-[1440px]"}>
+        <div className={"max-w-[1400px] mx-auto"}>
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={ <HomePage/> } />
