@@ -25,7 +25,7 @@ const Slider = () => {
                     navigation={true} modules={[Pagination,Autoplay, Navigation]}
                     loop={true}  slidesPerView={1} spaceBetween={30} className="mySwiper"
                     style={{
-                        '--swiper-navigation-color': '#fff',
+                        '--swiper-navigation-color': 'red',
                         '--swiper-pagination-color': '#fff',
                     }}
                     autoplay={{
@@ -36,8 +36,7 @@ const Slider = () => {
                         sliderList.map((item,i)=>{
                             return(
                                 <SwiperSlide>
-                                    <img src={item['img']} className={"object-cover h-[100vh] w-full "} alt={""} />
-                                    <h2>{item['text']}</h2>
+                                    <img src={item['img']} className={"mt-20 h-[40vh] lg:h-[80vh] w-full "} alt={""} />
                                 </SwiperSlide>
                             )
                         })

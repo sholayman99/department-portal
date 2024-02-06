@@ -46,7 +46,7 @@ const AppNavbar = () => {
                     <summary className="m-1 border-none btn">
                         <Hamburger size={20} rounded easing="ease-in"/>
                     </summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <ul className=" rounded-b mt-[11px] p-3 shadow menu dropdown-content z-50 bg-base-100  w-52 md:w-60">
                         {navList}
                     </ul>
                 </details>
