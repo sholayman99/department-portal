@@ -14,7 +14,7 @@ else{
   return (
       <motion.section initial={{y:150}} transition={{ duration: 1.5,ease:"easeOut"}} whileInView={{y:0}}
           className="hero py-10 bg-base-100">
-        <div className="hero-content justify-between items-start flex-col-reverse md:flex-row-reverse lg:flex-row-reverse">
+        <div className="hero-content p-5 justify-between items-start flex-col-reverse md:flex-row-reverse lg:flex-row-reverse">
            <div className="border-t-[20px] border-r-[20px] border-l-[20px] border-b-[30px] border-base-200
             rounded-lg shadow-3xl bg-base-200 gap-10">
                <img src={ messageList['avatar'] } alt="Professor Dr. S. M. Afzal Hossain"

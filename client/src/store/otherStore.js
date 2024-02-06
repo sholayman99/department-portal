@@ -14,12 +14,19 @@ const OtherStore = create((set)=>({
     messageListRequest : async ()=>{
         let res = await axios.get("/api/v1/findMessage");
         let data = await res['data'];
-        console.log(data['data'][0])
         if(data['status']==="success"){
             set({messageList:data['data'][0]})
         }
 
     },
+    programmeList:null,
+    programmeListRequest:async()=>{
+        let res = await axios.get('/api/v1/findProgrammes');
+        let data = await res['data'];
+        if(data['status']==="success"){
+            set({programmeList:data['data']})
+        }
+    }
 
 }))
 
