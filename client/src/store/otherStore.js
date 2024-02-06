@@ -26,7 +26,15 @@ const OtherStore = create((set)=>({
         if(data['status']==="success"){
             set({programmeList:data['data']})
         }
-    }
+    },
+    eventList:null,
+    eventListRequest:async()=>{
+        let res = await axios.get('/api/v1/findEvents');
+        let data = await res['data'];
+        if(data['status']==="success"){
+            set({eventList:data['data']})
+        }
+    },
 
 }))
 

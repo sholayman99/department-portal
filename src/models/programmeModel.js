@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
         course:{type:String,required:true},
-        img:{type:String,required:true}
+        img:{type:String,required:true},
+        text:{type:String,required:true}
     },
     {timestamps:true , versionKey:false})
 

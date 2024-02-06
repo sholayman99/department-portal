@@ -38,5 +38,6 @@ router.get("/findEvents" , otherController.findEvents);
 router.get("/findGallery" , otherController.findGallery);
 router.get("/findProgrammes" , otherController.findProgrammes);
 router.get("/findSliders" , otherController.findSliders);
+router.get("/findMessage" , otherController.findMessage);
 
 module.exports=router;
