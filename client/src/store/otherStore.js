@@ -10,6 +10,16 @@ const OtherStore = create((set)=>({
             set({sliderList:data['data']});
         }
     },
+    messageList :null,
+    messageListRequest : async ()=>{
+        let res = await axios.get("/api/v1/findMessage");
+        let data = await res['data'];
+        console.log(data['data'][0])
+        if(data['status']==="success"){
+            set({messageList:data['data'][0]})
+        }
+
+    },
 
 }))
 
