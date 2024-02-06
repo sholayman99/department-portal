@@ -5,6 +5,8 @@ import StudentPage from "./pages/StudentPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import DepMemberPage from "./pages/DepMemberPage.jsx";
+import EventDetailsPage from "./pages/EventDetailsPage.jsx";
+import AllEventsPage from "./pages/AllEventsPage.jsx";
 
 const App = () => {
     return (
@@ -16,6 +18,8 @@ const App = () => {
                     <Route path={"/members"} element={ <DepMemberPage/> } />
                     <Route path={"/about"} element={ <AboutPage/> } />
                     <Route path={"/contact"} element={ <ContactPage/> } />
+                    <Route path={"/all-events"} element={ <AllEventsPage/> } />
+                    <Route path={"/event-details/:id"} element={ <EventDetailsPage/> } />
                 </Routes>
             </BrowserRouter>
         </div>
