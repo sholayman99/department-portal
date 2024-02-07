@@ -5,7 +5,7 @@
 * */
 
 
-const {findSliderService,findEventService,findProgrammeService,findGalleryService,findMessageService} = require("../services/otherService")
+const {findSliderService,findProgrammeService,findGalleryService,findMessageService} = require("../services/otherService")
 
 //controller for slider
 exports.findSliders = async (req,res)=>{
@@ -27,15 +27,6 @@ exports.findProgrammes = async (req,res)=>{
     }
 }
 
-//controller for event
-exports.findEvents = async (req,res)=>{
-    let data = await findEventService();
-    if(data['status']==="success"){
-        res.status(200).json(data);
-    }else{
-        res.status(400).json(data);
-    }
-}
 
 //controller for gallery
 exports.findGallery = async (req,res)=>{

@@ -32,16 +32,7 @@ const findProgrammeService = async ()=>{
     }
 }
 
-//controller for event
-const findEventService = async ()=>{
-    try {
-        let matchStage = {$match:{}};
-        let data = await eventModel.aggregate([matchStage]);
-        return {status:"success" , data:data};
-    }catch (e) {
-        return {status:"error" , data:e.message};
-    }
-}
+
 
 //controller for gallery
 const findGalleryService = async ()=>{
@@ -66,4 +57,4 @@ const findMessageService = async ()=>{
 
 
 
-module.exports ={findSliderService,findEventService,findProgrammeService,findGalleryService,findMessageService};
+module.exports ={findSliderService,findProgrammeService,findGalleryService,findMessageService};
