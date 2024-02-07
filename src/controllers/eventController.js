@@ -3,7 +3,7 @@
 * Description: This file contains all the controller for event request.
 * Date: 31 January  2024.
 * */
-const {findEventService} = require("../services/eventService");
+const {findEventService,findEventDetailsService} = require("../services/eventService");
 
 //controller for event
 exports.findEvents = async (req,res)=>{
@@ -15,6 +15,14 @@ exports.findEvents = async (req,res)=>{
     }
 }
 
-
+//controller for event details
+exports.findEventDetails = async (req,res)=>{
+    let data = await findEventDetailsService(req);
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
+}
 
 

@@ -36,6 +36,7 @@ router.get("/readStaffDetails/:id",authVerifyMiddleware, staffController.readSta
 
 //event
 router.get("/findEvents" , eventController.findEvents);
+router.get("/findEventDetails/:eventID" , eventController.findEventDetails);
 
 
 //others

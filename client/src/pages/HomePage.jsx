@@ -5,11 +5,13 @@ import Slider from "../components/home/Slider.jsx";
 import Message from "../components/home/Message.jsx";
 import AcademicProgrammes from "../components/home/AcademicProgrammes.jsx";
 import Events from "../components/home/Events.jsx";
+import eventStore from "../store/eventStore.js";
 
 
 const HomePage = () => {
 
-    const {sliderListRequest,messageListRequest,programmeListRequest,eventListRequest} = otherStore();
+    const {sliderListRequest,messageListRequest,programmeListRequest} = otherStore();
+    const {eventListRequest} = eventStore();
 
     useEffect(() => {
         (async()=>{

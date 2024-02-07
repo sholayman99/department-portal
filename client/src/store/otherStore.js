@@ -1,7 +1,7 @@
 import axios from "axios";
 import {create}   from "zustand";
 
-const OtherStore = create((set)=>({
+const otherStore = create((set)=>({
     sliderList :null,
     sliderListRequest : async ()=>{
         let res = await axios.get("/api/v1/findSliders");
@@ -27,15 +27,8 @@ const OtherStore = create((set)=>({
             set({programmeList:data['data']})
         }
     },
-    eventList:null,
-    eventListRequest:async()=>{
-        let res = await axios.get('/api/v1/findEvents');
-        let data = await res['data'];
-        if(data['status']==="success"){
-            set({eventList:data['data']})
-        }
-    },
+
 
 }))
 
-export default OtherStore;
+export default otherStore;
