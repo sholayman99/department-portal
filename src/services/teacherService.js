@@ -9,8 +9,9 @@ const teacherModel = require("../models/teacherModel");
 const readTeachersService = async (req, res)=>{
     try {
         let matchStage = {$match:{}};
+        let sortStage ={$sort:{priority:1}};
         let data = await teacherModel.aggregate([
-            matchStage
+            matchStage,sortStage
         ]);
         return {status:"success" , data:data}
     }catch (e) {

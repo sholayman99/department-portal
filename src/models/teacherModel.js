@@ -21,7 +21,9 @@ const dataSchema = mongoose.Schema({
         hobby:{type:String, required:true},
         bcsBatch:{type:String, required:true},
         designation:{type:String, required:true} ,
-        qualification:{type:String, required:true}
+        qualification:{type:String, required:true},
+        title:{type:String},
+        priority:{type:String}
     },
     {timestamps:true , versionKey:false})
 

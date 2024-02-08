@@ -1,10 +1,11 @@
 import React from 'react';
+import Layout from "../components/layout/Layout.jsx";
 
 const DepMemberPage = () => {
     return (
-        <div>
+        <Layout>
             
-        </div>
+        </Layout>
     );
 };
 

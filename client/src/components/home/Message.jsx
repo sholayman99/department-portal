@@ -13,9 +13,9 @@ if(messageList===null){
 else{
   return (
       <motion.section initial={{y:150}} transition={{ duration: 1.5,ease:"easeOut"}} whileInView={{y:0}}
-          className="hero  p-5 bg-base-200">
-        <div className="hero-content p-10 rounded-md justify-between bg-base-100 items-start
-        flex-col-reverse md:flex-row-reverse lg:flex-row-reverse">
+          className="hero mb-5 bg-base-200">
+        <div className="hero-content lg:p-16 md:p-10 p-5 rounded-lg justify-between bg-base-100 items-start
+        flex-col-reverse md:flex-row-reverse lg:flex-row-reverse shadow-md">
            <div className="rounded-lg shadow-3xl bg-base-300 gap-10 hover:scale-105
            transition duration-500 ease-in-out hover:border-2 border-neutral">
                <img src={ messageList['avatar'] } alt="Professor Dr. S. M. Afzal Hossain"
