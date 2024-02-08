@@ -6,7 +6,7 @@ const AllEventSkeleton = () => {
             {
                 Array.from({length: 2}).map((i) => {
                     return (
-                        <div key={i} className="flex flex-col  gap-4 w-full">
+                        <div key={i} className="flex flex-col bg-base-100  gap-4 w-full">
 
                             <div className="skeleton h-6 w-48"></div>
                             {

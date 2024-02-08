@@ -10,7 +10,7 @@ const Event = ({item}) => {
             <Link to={`/event-details/${item['_id']}`}
                   className="flex lg:p-5 md:p-5 p-2.5 lg:flex-row flex-col border-neutral
                                rounded-md items-start justify-between gap-10 bg-base-100 hover:border-2
-                               cursor-pointer hover:scale-y-105 transition duration-500 ease-in-out">
+                                hover:scale-y-105 transition duration-500 ease-in-out">
                 <div className={"w-full"}>
                     <img src={item['img']}
                                      className={" w-full rounded-md md:h-[280px] lg:h-[280px]"} alt={""}/>
