@@ -21,7 +21,7 @@ const DepMemberPage = () => {
 
     return (
         <Layout>
-            <Background text={"Department Teachers"}/>
+            <Background text={"Department Members"}/>
             <section>
                 <div className={"flex items-center lg:px-10 lg:py-16 p-6 gap-3"}>
                     <div className={"h-6 md:h-10 lg:h-10 w-[1px] bg-neutral"}></div>

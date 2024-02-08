@@ -21,7 +21,7 @@ const Event = ({item}) => {
                         <h1 className={"lg:text-xl font-bold"}>{item['date']}</h1>
                     </div>
                     <h2 className={"lg:text-3xl font-bold uppercase"}>{item['title']}</h2>
-                    <p className={"text-gray-600 text-sm lg:text-md"}>
+                    <p className={"text-gray-600 text-md lg:text-md"}>
                                     {
                                         item['des'].slice(0, 195)
                                     }
