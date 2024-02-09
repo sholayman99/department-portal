@@ -2,8 +2,8 @@ import React from 'react';
 import loginVec from "../../assets/images/login.jpg"
 import {Link, useNavigate} from "react-router-dom";
 import userStore from "../../store/userStore.js";
-import LoginSubmitBtn from "./LoginSubmitBtn.jsx";
-import ValidationHelper from "../../helper/validationHelper.js";
+import SubmitBtn from "./SubmitBtn.jsx";
+import {motion} from "framer-motion";
 import toast from "react-hot-toast";
 import validationHelper from "../../helper/validationHelper.js";
 
@@ -21,8 +21,11 @@ const LoginForm = () => {
         }else{
               let res = await userLoginRequest(loginFormValue);
               if(res === true){
-                  toast.success("login successfully")
-                  navigate("/")
+                  toast.success("login successfully");
+                  navigate("/");
+                  loginFormValue.email="";
+                  loginFormValue.password="";
+
               }
         }
     }
@@ -36,10 +39,11 @@ const LoginForm = () => {
                         <h1 className={"lg:text-4xl text-2xl font-bold"}>Welcome to</h1>
                         <h1 className={"lg:text-4xl text-2xl"}>Department of chemistry</h1>
                     </div>
-                    <p className={"my-4"}>login to access your account</p>
+                    <p className={"my-4"}>Login to access your account</p>
                     <img src={loginVec} alt={""} className={"w-64 rounded-xl"}/>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-2xl">
+                <motion.div whileHover={{scale: 1.1}} transition={{type: "spring", stiffness: 400, damping: 17}}
+                    className="card w-96 bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <h2 className="card-title">LOGIN</h2>
 
@@ -63,17 +67,17 @@ const LoginForm = () => {
                         </div>
 
                         <div className="form-control mt-6">
-                          <LoginSubmitBtn onClick={onFormSubmit} />
+                          <SubmitBtn onClick={onFormSubmit} text={"Login"} />
                         </div>
                         <div className="form-control my-6">
                             <p>Don't have an account?
-                                <Link to={"/create-account"} className={"font-bold hover:text-primary"}>
+                                <Link to={"/create-account"} className={"font-bold hover:text-primary hover:underline"}>
                                     Create Account
                                 </Link>
                             </p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
 
