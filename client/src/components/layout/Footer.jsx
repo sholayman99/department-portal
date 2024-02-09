@@ -4,7 +4,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <footer>
-            <section className="footer max-w-[1400px] mt-10 p-10 bg-neutral text-base-100">
+            <section className="footer max-w-[1400px] pt-10 p-10 bg-neutral text-base-100">
                 <nav>
                     <h6 className="footer-title">Links</h6>
                     <a className="link text-[17px] link-hover">Dept. Members</a>
