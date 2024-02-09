@@ -52,7 +52,7 @@ const Footer = () => {
                     </div>
                 </nav>
             </section>
-            <section className="footer items-center px-4 py-8 bg-secondary text-neutral-content">
+            <section className="footer items-center px-8 py-8 bg-secondary text-neutral-content">
                 <aside className="items-center grid-flow-col">
                     <p>© Department Of Chemistry.All right reserved {year}</p>
                 </aside>

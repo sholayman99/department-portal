@@ -21,9 +21,9 @@ const DepMemberPage = () => {
 
     return (
         <Layout>
-            <Background text={"Department Members"}/>
+            <Background text={"Department Members"} link={"members"}/>
             <section>
-                <div className={"flex items-center lg:px-10 lg:py-10 p-6 gap-3"}>
+                <div className={"flex items-center lg:px-10 lg:py-10 p-6 gap-2"}>
                     <div className={"h-4 md:h-6 lg:h-8 w-[2px] bg-neutral"}></div>
                     <motion.h2 initial={{x: -100}} transition={{duration: 1.5, ease: "easeOut"}} whileInView={{x: 0}}
                                className="lg:text-[2.5rem] md:text-[1.8rem] uppercase text-[1.3rem] font-bold text-primary ">
@@ -33,7 +33,7 @@ const DepMemberPage = () => {
                 <Teachers/>
             </section>
             <section>
-                <div className={"flex items-center lg:px-10 lg:py-10 p-6 gap-3"}>
+                <div className={"flex items-center lg:px-10 lg:py-10 p-6 gap-2"}>
                     <div className={"h-4 md:h-6 lg:h-8 w-[2px] bg-neutral"}></div>
                     <motion.h2 initial={{x: -100}} transition={{duration: 1.5, ease: "easeOut"}} whileInView={{x: 0}}
                                className="lg:text-[2.5rem] md:text-[1.8rem] uppercase text-[1.3rem] font-bold text-primary ">

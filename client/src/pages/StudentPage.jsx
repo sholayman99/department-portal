@@ -18,7 +18,7 @@ const StudentPage = () => {
 
     return (
         <Layout>
-            <Background text={"Our Students"}/>
+            <Background text={"Our Students"} link={"students"}/>
             <section>
                 <div className={"flex items-center lg:px-10 lg:py-10 p-6 gap-2"}>
                     <div className={"h-4 md:h-6 lg:h-8 w-[2px] bg-neutral"}></div>

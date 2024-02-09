@@ -12,7 +12,7 @@ const Teachers = () => {
         return <MemberSkeleton />
     }else{
         return (
-            <section className={"grid grid-cols-1 md:grid-cols-2 lg:px-10 px-6 lg:grid-cols-3 gap-10"}>
+            <section className={"grid grid-cols-1 md:grid-cols-2 lg:px-16 px-6 lg:grid-cols-3 gap-10"}>
                 {
                     teacherList.map((item,i)=>{
                         return(
@@ -29,7 +29,7 @@ const Teachers = () => {
                                 </div>
                                 <div className={"bg-secondary text-center p-5 w-full"}>
                                     <h1 className={"text-base-100 text-xl font-[600]"}>{item['teacherName']}</h1>
-                                    <h4 className={"text-warning text-lg font-[500] uppercase"}>{item['designation']}</h4>
+                                    <h4 className={"text-warning text-md font-[500] uppercase"}>{item['designation']}</h4>
                                 </div>
                             </Link>
                         )

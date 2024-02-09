@@ -12,30 +12,29 @@ const AppNavbar = () => {
                               target="_blank"> GSC_HOME </ExternalLink>
             </li>
             <li>
-                <NavLink to={"/"} className={({isActive}) => isActive?"font-semibold"+
-                    " underline text-primary text-md":"text-md"}>HOME</NavLink>
+                <NavLink to={"/"} className={({isActive}) => isActive ? "font-semibold" +
+                    " underline text-primary text-md" : "text-md"}>HOME</NavLink>
             </li>
             <li>
-                <NavLink to={"/members"} className={({isActive}) => isActive?"font-semibold"+
-                    " underline text-primary text-md" :"text-md"}>DEP_MEMBERS</NavLink>
+                <NavLink to={"/members"} className={({isActive}) => isActive ? "font-semibold" +
+                    " underline text-primary text-md" : "text-md"}>DEP_MEMBERS</NavLink>
             </li>
             <li>
-                <NavLink to={"/students"} className={({isActive}) => isActive?"font-semibold"+
-                    " underline text-primary text-md":"text-md"}>STUDENTS</NavLink>
+                <NavLink to={"/students"} className={({isActive}) => isActive ? "font-semibold" +
+                    " underline text-primary text-md" : "text-md"}>STUDENTS</NavLink>
             </li>
             <li>
-                <NavLink to={"/about"} className={({isActive}) => isActive?"font-semibold"+
+                <NavLink to={"/about"} className={({isActive}) => isActive ? "font-semibold" +
                     " underline text-primary text-md" : "text-md"}>ABOUT</NavLink>
             </li>
             <li>
-                <NavLink to={"/contact"} className={({isActive}) => isActive?"font-semibold"+
+                <NavLink to={"/contact"} className={({isActive}) => isActive ? "font-semibold" +
                     " underline text-primary text-md" : "text-md"}>CONTACT</NavLink>
             </li>
             <li>
-                <input type="text" placeholder="Sarch students"
-                       className="input input-bordered input-primary w-full max-w-xs"/>
+                <NavLink to={"/login"} className={'shadow-lg bg-base-100 border ' +
+                    'border-primary hover:scale-105 transition ease-in-out delay-150'}>LOGIN</NavLink>
             </li>
-
         </>
     );
 

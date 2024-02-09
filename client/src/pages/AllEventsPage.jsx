@@ -22,7 +22,7 @@ const AllEventsPage = () => {
        return (
            <Layout>
                <main>
-                   <Background text={"All Events"} />
+                   <Background text={"All Events"} link={"all-events"} />
                    <section className={"lg:p-10 p-6 grid grid-cols-1 gap-10"}>
                        {
                          eventList === null?( <AllEventSkeleton /> ):
