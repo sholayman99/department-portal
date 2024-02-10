@@ -1,13 +1,14 @@
 import React from 'react';
 import studentStore from "../../store/studentStore.js";
 import StudentSkeleton from "../../skeleton/Student-Skeleton.jsx";
+import ProfileSkeleton from "../../skeleton/Profile-Skeleton.jsx";
 
 const StudentProfile = () => {
 
     const {studentDetails} = studentStore();
 
     if(studentDetails === null){
-        return <StudentSkeleton />
+        return <ProfileSkeleton />
     }else{
         return (
             <main className={"lg:min-h-[100vh] min-h-screen md:min-h-[70vh] flex p-5 mt-20 lg:mt-0 md:mt-0  items-center justify-center"}>
@@ -22,7 +23,7 @@ const StudentProfile = () => {
                         </div>
                         <div className={"my-3 w-full flex flex-col items-center gap-1"}>
                             <div className={"h-0.5 w-full bg-gray-400"}></div>
-                            <h4>{studentDetails['bio']}</h4>
+                            <h4 className={"text-center"}>{studentDetails['bio']}</h4>
                             <div className={"h-0.5 w-full bg-gray-400"}></div>
                         </div>
                         <h2 className={"text-2xl text-primary font-semibold"}>{studentDetails['studentName']}</h2>

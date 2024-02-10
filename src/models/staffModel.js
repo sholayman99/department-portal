@@ -19,6 +19,8 @@ const dataSchema = mongoose.Schema({
         bod:{type:String, required:true},
         age:{type:String, required:true},
         hobby:{type:String, required:true},
+        email:{type:String, required:true},
+        qualification:{type:String, required:true},
         designation:{type:String, required:true}
     },
     {timestamps:true , versionKey:false})

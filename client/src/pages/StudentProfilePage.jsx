@@ -7,7 +7,7 @@ import {useParams} from "react-router-dom";
 const StudentProfilePage = () => {
 
     const {studentDetailsRequest} = studentStore();
-    const id = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
         (async()=>{

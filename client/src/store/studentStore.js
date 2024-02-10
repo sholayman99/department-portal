@@ -30,8 +30,7 @@ const studentStore = create((set)=>({
     studentDetails:null,
     studentDetailsRequest:async(id)=>{
         try{
-            let studentID = id.id;
-            let res = await axios.get(`/api/v1/readStudentDetails/${studentID}`);
+            let res = await axios.get(`/api/v1/readStudentDetails/${id}`);
             let data = await res['data'];
             if(data['status']==="success"){
                 set({studentDetails:data['data'][0]})
