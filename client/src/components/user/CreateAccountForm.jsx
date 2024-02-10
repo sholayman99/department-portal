@@ -21,8 +21,8 @@ const CreateAccountForm = () => {
         }else{
             let res = await userAccountCreateRequest(accountFormValue);
             if(res === true){
-                toast.success("login successfully");
-                navigate("/");
+                toast.success("6 digit otp has been sent");
+                navigate("/otp-verify");
                 accountFormValue.email="";
                 accountFormValue.password="";
 

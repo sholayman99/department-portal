@@ -6,11 +6,11 @@
 
 const nodemailer = require("nodemailer");
 
-const emailSend = async (email,sub,text)=>{
+const emailSend = async (email,text,sub)=>{
 
     const transport=nodemailer.createTransport({
         host: "mail.teamrabbil.com",
-        port: 25,
+        port: 587,
         secure: false,
         auth: {user: "info@teamrabbil.com", pass: '~sR4[bhaC[Qs'},
         tls: {rejectUnauthorized: false},

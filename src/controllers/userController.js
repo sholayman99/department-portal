@@ -13,6 +13,7 @@ const {
 exports.createAccount = async (req,res)=>{
 
     let data = await createAccountService(req);
+
     if(data['status']==="success"){
         res.status(201).json(data);
     }else{
@@ -27,7 +28,7 @@ exports.createAccount = async (req,res)=>{
 exports.verifyAccount = async (req,res)=>{
     let data = await verifyAccountService(req);
     if(data['status']==="success"){
-        res.status(200).json(data);
+        res.status(201).json(data);
     }else{
         res.status(400).json(data);
     }

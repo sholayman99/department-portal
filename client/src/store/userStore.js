@@ -1,6 +1,6 @@
 import {create} from "zustand";
 import axios from "axios";
-import {setEmail} from "../helper/utility.js";
+import {getEmail, setEmail} from "../helper/utility.js";
 
 
 const userStore = create((set)=>({
@@ -13,7 +13,7 @@ const userStore = create((set)=>({
             [name]:value
         }
     }))
-},
+    },
     accountFormValue:{email:"",password:""},
     accountFormOnChange:(name,value)=>{
         set((state)=>({
@@ -23,6 +23,16 @@ const userStore = create((set)=>({
             }
         }))
     },
+    otpFormValue:{otp:""},
+    otpFormOnChange:(name,value)=>{
+       set((state)=>({
+           otpFormValue:{
+               ...state.otpFormValue,
+               [name]:value
+           }
+       }))
+    },
+
 
     isFormSubmit:false,
     userLoginRequest:async(postBody)=>{
@@ -35,12 +45,20 @@ const userStore = create((set)=>({
     },
 
     userAccountCreateRequest:async(postBody)=>{
-        console.log(postBody)
         set({isFormSubmit:true});
         let res = await axios.post('/api/v1/createAccount',postBody);
-        console.log(res.data);
         let data = await res['data'];
         setEmail(postBody.email);
+        set({isFormSubmit:false});
+        return data['status'] === "success";
+    },
+
+    userVerifyRequest:async(postBody)=>{
+        let otp = postBody.otp;
+        let email = getEmail()
+        set({isFormSubmit:true});
+        let res = await axios.post(`/api/v1/verifyAccount/${email}/${otp}`);
+        let data = await res['data'];
         set({isFormSubmit:false});
         return data['status'] === "success";
     }

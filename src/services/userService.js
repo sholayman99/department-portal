@@ -18,9 +18,9 @@ const createAccountService = async (req)=>{
         let reqBody = req.body;
         let email = req.body['email'];
         let otp = Math.round(Math.floor(100000 + Math.random()* 900000));
-        let EmailText = `Your Otp Verification Code Is : ${otp}`;
-        let EmailSub = "Account Verification" ;
-        await emailSend(email , EmailText , EmailSub) ;
+        let emailText = `Your Otp Verification Code Is : ${otp}`;
+        let emailSub = "Account Verification" ;
+        await emailSend(email , emailText , emailSub) ;
         reqBody.otp = otp;
         let data = await userModel.create(reqBody);
         return {status:"success" , message:"6 digit otp has been sent", data:data}
@@ -33,7 +33,7 @@ const createAccountService = async (req)=>{
 
 
 //verify user account controller
-const verifyAccountService = async (req,res)=>{
+const verifyAccountService = async (req)=>{
 try {
     let email = req.params['email']
     let otp = req.params['otp'];
@@ -78,32 +78,6 @@ const loginService = async (req)=>{
   }
 }
 
-//user read profile service
-// const readUserProfileService =async (req)=>{
-//     try {
-//         let userID = new ObjectId(req.headers['userID']);
-//         let matchStage = {$match:{userID:userID}};
-//
-//         let joinWithUserStage = {$lookup:{
-//             from:"users" , localField:"userID" , foreignField:"_id" , as:"user"
-//             }};
-//         let unwindProfileStage = {$unwind:"$user"};
-//
-//
-//         let joinWithDetailsStage = {$lookup:{
-//                 from:"details" , localField:"user._id" , foreignField:"userID" , as:"detail"
-//             }};
-//         let unwindDetailsStage = {$unwind:"$detail"};
-//
-//
-//         let data = await profileModel.aggregate([
-//             matchStage,joinWithUserStage,unwindProfileStage,joinWithDetailsStage,unwindDetailsStage
-//         ])
-//         return {status:"success",  data:data}
-//     }catch (e) {
-//         return {status:"failed" , data:e.message}
-//     }
-// }
 
 
 
