@@ -25,6 +25,7 @@ router.get('/logOut' , userController.logOut);
 //students
 router.get("/readStudents" , studentController.readStudents);
 router.get("/readStudentDetails/:id",authVerifyMiddleware, studentController.readStudentDetails);
+router.get('/findStudentByKeyword/:keyword' , studentController.findStudentByKeyword)
 
 //teachers
 router.get("/readTeachers" , teacherController.readTeachers);

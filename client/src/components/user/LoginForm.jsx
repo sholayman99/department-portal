@@ -28,8 +28,8 @@ const LoginForm = () => {
 
               }else{
                   toast.error("Something went wrong!");
-                  accountFormValue.email="";
-                  accountFormValue.password="";
+                  loginFormValue.email="";
+                  loginFormValue.password="";
               }
         }
     }

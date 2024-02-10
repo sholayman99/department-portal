@@ -10,8 +10,6 @@ const AppNavbar = () => {
     const navigate = useNavigate();
     const {isLogin,userLogoutRequest} = userStore();
 
-    console.log(isLogin())
-
     const onLogout = async()=>{
        let res = await userLogoutRequest();
        if(res===true){
@@ -51,15 +49,19 @@ const AppNavbar = () => {
             <li>
                 {
                     isLogin()?( <button  onClick={onLogout}
-                              className={'shadow-lg hover:scale-105 border border-primary '+
-                            'transition ease-in-out delay-150 '}>
+                              className={'shadow-lg  border border-primary '+
+                            ' hover:scale-105 transition ease-in-out delay-150 '}>
                                 LOGOUT
                     </button>
                         ):
                         (
-                        <NavLink to={"/login"} className={"shadow-lg border bg-neutral text-base-100"+
-                            "border-base-100 hover:scale-105 transition ease-in-out underline delay-150"}
-                                >LOGIN</NavLink>
+                        <NavLink to={"/login"} className={({isActive}) => isActive ?
+                            "font-semibold bg-neutral text-base-100 underline shadow-lg"+
+                            "hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"
+                            :
+                            "bg-neutral text-base-100 shadow-lg"+
+                            " hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"}
+                            >LOGIN</NavLink>
                         )
                 }
             </li>

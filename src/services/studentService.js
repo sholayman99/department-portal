@@ -7,7 +7,7 @@
 const studentModel = require("../models/studentModel");
 
 
-//find teachers controller
+//find teachers query
 const readStudentsService = async (req)=>{
   try {
       let matchStage = {$match:{}};
@@ -20,16 +20,32 @@ const readStudentsService = async (req)=>{
   }
 }
 
-//find teachers details controller
+//find teachers details query
 const readStudentsDetailService = async (req)=>{
 try {
      let id = req.params.id;
-     let data = await studentModel.find({_id:id})
-    return {status:"success" , data:data}
+     let data = await studentModel.find({_id:id});
+    return {status:"success" , data:data};
 }catch (e) {
-    return {status:"failed" , data:e.message}
+    return {status:"failed" , data:e.message};
+}
 }
 
+//find student by keyword query
+const findStudentByKeywordService =async (req)=>{
+    try {
+        let keyword = req.params['keyword'];
+        let searchRegex ={"$regex":keyword , "$options":"i"};
+        let matchStage={$match: {studentName:searchRegex}};
+
+        let data = await studentModel.aggregate([
+            matchStage
+        ]);
+        return {status:"success" , data:data}
+    }
+    catch (e) {
+        return {status:"failed" , data:e.message};
+    }
 }
 
-module.exports={readStudentsService,readStudentsDetailService};
+module.exports={readStudentsService,readStudentsDetailService,findStudentByKeywordService};

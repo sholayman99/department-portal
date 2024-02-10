@@ -3,7 +3,7 @@ import studentStore from "../../store/studentStore.js";
 import StudentSkeleton from "../../skeleton/Student-Skeleton.jsx";
 import {Link} from "react-router-dom";
 
-const Students = () => {
+const Students = ({student}) => {
 
     const {studentList} = studentStore();
 
