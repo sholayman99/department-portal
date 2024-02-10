@@ -16,7 +16,7 @@ const Teachers = () => {
                 {
                     teacherList.map((item,i)=>{
                         return(
-                            <Link to={"/profile"} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
+                            <Link to={`/teacher-profile/${item['_id']}`} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
                                 "items-center gap-4 hover:scale-105 transition duration-500 ease-in-out"}>
                                 {
                                     item['title'] ? (<h3 className={"text-xl p-5 font-[600]"}>{item['title']}</h3>) :

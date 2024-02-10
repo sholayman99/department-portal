@@ -2,7 +2,7 @@ import React from 'react';
 
 const StudentSkeleton = () => {
     return (
-        <section className={" lg:px-10 md:px-6  px-10 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-10"}>
+        <section className={" lg:px-10 md:px-6  px-10 pb-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-10"}>
             {
                 Array.from({length: 8}).map((i) => {
                     return (

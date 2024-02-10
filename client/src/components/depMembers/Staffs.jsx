@@ -16,7 +16,7 @@ const Staffs = () => {
                 {
                     staffList.map((item,i)=>{
                         return(
-                            <Link to={"/profile"} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
+                            <Link to={`/staff-profile/${item['_id']}`} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
                                 "items-center gap-4 hover:scale-105 transition duration-500 ease-in-out"}>
                                 <div className="avatar">
                                     <div className="lg:w-48 hover:border-2 border-secondary my-2 md:w-40 w-32 rounded-full">

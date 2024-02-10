@@ -10,6 +10,9 @@ import AllEventsPage from "./pages/AllEventsPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateAccountPage from "./pages/CreateAccountPage.jsx";
 import OtpPage from "./pages/OtpPage.jsx";
+import StudentProfilePage from "./pages/StudentProfilePage.jsx";
+import TeacherProfilePage from "./pages/TeacherProfilePage.jsx";
+import StaffProfilePage from "./pages/StaffProfilePage.jsx";
 
 const App = () => {
     return (
@@ -26,6 +29,9 @@ const App = () => {
                     <Route path={"/login"} element={ <LoginPage/> } />
                     <Route path={"/create-account"} element={ <CreateAccountPage/> } />
                     <Route path={"/otp-verify"} element={ <OtpPage/> } />
+                    <Route path={"/student-profile/:id"} element={<StudentProfilePage /> } />
+                    <Route path={"/teacher-profile/:id"} element={<TeacherProfilePage /> } />
+                    <Route path={"/staff-profile/:id"} element={<StaffProfilePage /> } />
                 </Routes>
             </BrowserRouter>
         </div>

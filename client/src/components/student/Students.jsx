@@ -16,7 +16,7 @@ const Students = ({student}) => {
                 {
                     studentList.map((item, i) => {
                         return (
-                            <Link to={"/profile"} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
+                            <Link to={`/student-profile/${item['_id']}`} key={i} className={"bg-base-100 rounded-lg flex flex-col " +
                                 "items-center gap-4 hover:scale-105 transition duration-500 ease-in-out"}>
                                 <div className="avatar">
                                     <div className="lg:w-36 hover:border-2 border-secondary md:w-36 w-24 my-2  rounded-full">

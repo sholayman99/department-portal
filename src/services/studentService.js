@@ -24,6 +24,7 @@ const readStudentsService = async (req)=>{
 const readStudentsDetailService = async (req)=>{
 try {
      let id = req.params.id;
+     console.log(id)
      let data = await studentModel.find({_id:id});
     return {status:"success" , data:data};
 }catch (e) {
