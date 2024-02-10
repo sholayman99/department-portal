@@ -12,7 +12,7 @@ const Staffs = () => {
         return <MemberSkeleton />
     }else {
         return (
-            <section className={"grid grid-cols-1 md:grid-cols-2 lg:px-16 px-6 lg:grid-cols-3 gap-10"}>
+            <section className={"grid grid-cols-1 md:grid-cols-2 lg:px-16 px-6 pb-5 lg:grid-cols-3 gap-10"}>
                 {
                     staffList.map((item,i)=>{
                         return(

@@ -12,7 +12,7 @@ const SubmitBtn = (props) => {
         </motion.button>
     } else {
         return (
-            <button className="btn btn-primary">
+            <button className="btn btn-primary bg-opacity-50">
                 <span className="loading loading-spinner"></span>
                 loading
             </button>

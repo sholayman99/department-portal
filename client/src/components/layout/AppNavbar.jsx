@@ -1,10 +1,27 @@
 import React from 'react';
 import icon from "../../assets/images/icon.png"
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import { Divide as Hamburger } from 'hamburger-react'
 import {ExternalLink} from "react-external-link";
+import userStore from "../../store/userStore.js";
+import toast from "react-hot-toast";
 
 const AppNavbar = () => {
+    const navigate = useNavigate();
+    const {isLogin,userLogoutRequest} = userStore();
+
+    console.log(isLogin())
+
+    const onLogout = async()=>{
+       let res = await userLogoutRequest();
+       if(res===true){
+           sessionStorage.clear();
+           localStorage.clear();
+           navigate("/login");
+           toast.error("Logout successfully")
+       }
+    }
+
     const navList = (
         <>
             <li>
@@ -32,8 +49,19 @@ const AppNavbar = () => {
                     " underline text-primary text-md" : "text-md"}>CONTACT</NavLink>
             </li>
             <li>
-                <NavLink to={"/login"} className={'shadow-lg bg-base-100 border ' +
-                    'border-primary hover:scale-105 transition ease-in-out delay-150'}>LOGIN</NavLink>
+                {
+                    isLogin()?( <button  onClick={onLogout}
+                              className={'shadow-lg hover:scale-105 border border-primary '+
+                            'transition ease-in-out delay-150 '}>
+                                LOGOUT
+                    </button>
+                        ):
+                        (
+                        <NavLink to={"/login"} className={"shadow-lg border bg-neutral text-base-100"+
+                            "border-base-100 hover:scale-105 transition ease-in-out underline delay-150"}
+                                >LOGIN</NavLink>
+                        )
+                }
             </li>
         </>
     );

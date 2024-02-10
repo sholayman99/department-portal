@@ -1,9 +1,14 @@
 import {create} from "zustand";
 import axios from "axios";
 import {getEmail, setEmail} from "../helper/utility.js";
+import Cookies from "js-cookie";
 
 
 const userStore = create((set)=>({
+
+    isLogin:()=>{
+        return !!Cookies.get("token");
+    },
 
     loginFormValue:{email: "", password: ""},
     loginValueOnChange:(name,value)=>{
@@ -42,6 +47,12 @@ const userStore = create((set)=>({
         set({isFormSubmit:false});
         return data['status'] === "success";
 
+    },
+
+    userLogoutRequest:async ()=>{
+        let res = await axios.get('/api/v1/logOut');
+        let data = await res['data'];
+        return data['status'] === "success";
     },
 
     userAccountCreateRequest:async(postBody)=>{

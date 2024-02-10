@@ -1,5 +1,6 @@
 import axios from "axios";
 import {create}   from "zustand";
+import {unauthorized} from "../helper/utility.js";
 
 const eventStore = create((set)=>({
 
@@ -14,11 +15,15 @@ const eventStore = create((set)=>({
 
     eventDetails:null,
     eventDetailsRequest:async(eventID)=>{
-        let res = await axios.get(`/api/v1/findEventDetails/${eventID}`);
-        let data = await res['data'];
-        if(data['status']==="success"){
-            set({eventDetails:data['data'][0]})
-        }
+       try{
+           let res = await axios.get(`/api/v1/findEventDetails/${eventID}`);
+           let data = await res['data'];
+           if(data['status']==="success"){
+               set({eventDetails:data['data'][0]})
+           }
+       }catch (e) {
+        unauthorized(e.response.status);
+       }
     },
 
 }))

@@ -12,7 +12,7 @@ const Students = () => {
     }
     else{
         return (
-            <section className={"grid grid-cols-1 md:grid-cols-3 lg:px-10 px-6 lg:grid-cols-4 gap-10"}>
+            <section className={"grid grid-cols-1 md:grid-cols-3 lg:px-10 px-6 pb-5 lg:grid-cols-4 gap-10"}>
                 {
                     studentList.map((item, i) => {
                         return (

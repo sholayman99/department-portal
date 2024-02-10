@@ -20,6 +20,7 @@ const authVerifyMiddleware = require("../middlewares/authVerifyMiddleware")
 router.post("/createAccount", userController.createAccount);
 router.post("/verifyAccount/:email/:otp", userController.verifyAccount);
 router.post("/login", userController.login);
+router.get('/logOut' , userController.logOut);
 
 //students
 router.get("/readStudents" , studentController.readStudents);
@@ -36,7 +37,7 @@ router.get("/readStaffDetails/:id",authVerifyMiddleware, staffController.readSta
 
 //event
 router.get("/findEvents" , eventController.findEvents);
-router.get("/findEventDetails/:eventID" , eventController.findEventDetails);
+router.get("/findEventDetails/:eventID" ,authVerifyMiddleware, eventController.findEventDetails);
 
 
 //others
