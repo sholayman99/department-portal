@@ -26,6 +26,10 @@ const LoginForm = () => {
                   loginFormValue.email="";
                   loginFormValue.password="";
 
+              }else{
+                  toast.error("Something went wrong!");
+                  accountFormValue.email="";
+                  accountFormValue.password="";
               }
         }
     }

@@ -15,14 +15,14 @@ class ValidationHelper{
         let  MobileRegx = /(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/;
         return MobileRegx.test(value);
     }
-    static IsNumber(value) {
+    static isNumber(value) {
         let  OnlyNumberRegx = /^\d+(\.\d+)?$/;
         return OnlyNumberRegx.test(value);
     }
-    static IsNull(value) {
+    static isNull(value) {
         return value == null;
     }
-    static  IsEmpty(value) {
+    static  isEmpty(value) {
         return value.length === 0;
     }
 }

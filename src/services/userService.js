@@ -17,7 +17,6 @@ const createAccountService = async (req)=>{
     try {
         let reqBody = req.body;
         let email = req.body['email'];
-        let pass = req.body['password'];
         let otp = Math.round(Math.floor(100000 + Math.random()* 900000));
         let EmailText = `Your Otp Verification Code Is : ${otp}`;
         let EmailSub = "Account Verification" ;

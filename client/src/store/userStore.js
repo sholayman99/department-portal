@@ -14,16 +14,38 @@ const userStore = create((set)=>({
         }
     }))
 },
+    accountFormValue:{email:"",password:""},
+    accountFormOnChange:(name,value)=>{
+        set((state)=>({
+            accountFormValue:{
+                ...state.accountFormValue,
+                [name]:value
+            }
+        }))
+    },
+
     isFormSubmit:false,
     userLoginRequest:async(postBody)=>{
-        console.log(postBody)
         set({isFormSubmit:true})
         let res = await axios.post('/api/v1/login',postBody);
         let data = await res['data'];
         set({isFormSubmit:false});
         return data['status'] === "success";
 
+    },
+
+    userAccountCreateRequest:async(postBody)=>{
+        console.log(postBody)
+        set({isFormSubmit:true});
+        let res = await axios.post('/api/v1/createAccount',postBody);
+        console.log(res.data);
+        let data = await res['data'];
+        setEmail(postBody.email);
+        set({isFormSubmit:false});
+        return data['status'] === "success";
     }
+
+
 
 }));
 
