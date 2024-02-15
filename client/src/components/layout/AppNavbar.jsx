@@ -5,6 +5,7 @@ import { Divide as Hamburger } from 'hamburger-react'
 import {ExternalLink} from "react-external-link";
 import userStore from "../../store/userStore.js";
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const AppNavbar = () => {
     const navigate = useNavigate();
@@ -15,8 +16,9 @@ const AppNavbar = () => {
        if(res===true){
            sessionStorage.clear();
            localStorage.clear();
+           Cookies.remove('token');
            navigate("/login");
-           toast.error("Logout successfully")
+           toast.success("Logout successfully");
        }
     }
 

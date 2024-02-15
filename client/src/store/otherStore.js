@@ -28,6 +28,23 @@ const otherStore = create((set)=>({
         }
     },
 
+    imageList:null,
+    imageListRequest:async()=>{
+        let res = await axios.get('/api/v1/findGallery');
+        let data = await res['data'];
+        if(data['status']=== "success") {
+            set({imageList:data['data']});
+        }
+    },
+    about:null,
+    aboutRequest:async ()=>{
+        set({about:null})
+        let res = await axios.get('/api/v1/aboutMessage');
+        let data = await res['data'];
+        if(data['status']=== "success") {
+            set({about:data['data']});
+        }
+    }
 
 }))
 

@@ -1,10 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import Layout from "../components/layout/Layout.jsx";
+import Background from "../components/shared/Background.jsx";
+import otherStore from "../store/otherStore.js";
+import AllEventSkeleton from "../skeleton/All-Event-Skeleton.jsx";
 
 const AboutPage = () => {
+    const {aboutRequest,about} = otherStore();
+    useEffect(() => {
+        (async()=>{
+            await aboutRequest();
+        })()
+    }, []);
     return (
-        <div>
-            
-        </div>
+        <Layout>
+            <Background text={"About us"} link={"/about"} />
+            <section className={""}>
+                {
+                    about === null? (<AllEventSkeleton />):(
+                    about.map((item,i)=>{
+                        return (
+                            <div className={"card bg-base-100 lg:p-10 p-5 "} key={i}>
+                                <h4 className={"text-md md:text-lg font-semibold"}>{item['title']}:</h4>
+                                <p className={"text-gray-600 mt-2"}>{item['des']}</p>
+                            </div>
+                        )
+                    })
+                )
+                }
+            </section>
+        </Layout>
     );
 };
 

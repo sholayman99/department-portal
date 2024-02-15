@@ -14,7 +14,10 @@ import StudentProfilePage from "./pages/StudentProfilePage.jsx";
 import TeacherProfilePage from "./pages/TeacherProfilePage.jsx";
 import StaffProfilePage from "./pages/StaffProfilePage.jsx";
 
+
 const App = () => {
+
+
     return (
         <div className={"max-w-[1400px] font-roboto bg-[#EAEAEA] mx-auto"}>
             <BrowserRouter>

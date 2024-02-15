@@ -6,11 +6,12 @@ import Message from "../components/home/Message.jsx";
 import AcademicProgrammes from "../components/home/AcademicProgrammes.jsx";
 import Events from "../components/home/Events.jsx";
 import eventStore from "../store/eventStore.js";
+import DepartmentImages from "../components/home/DepartmentImages.jsx";
 
 
 const HomePage = () => {
 
-    const {sliderListRequest,messageListRequest,programmeListRequest} = otherStore();
+    const {sliderListRequest,messageListRequest,programmeListRequest,imageListRequest,imageList} = otherStore();
     const {eventListRequest} = eventStore();
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const HomePage = () => {
             await messageListRequest();
             await programmeListRequest();
             await eventListRequest();
+            await imageListRequest()
         })()
     }, []);
 
@@ -28,6 +30,7 @@ const HomePage = () => {
             <Message />
             <AcademicProgrammes />
             <Events />
+            <DepartmentImages />
         </Layout>
     );
 };

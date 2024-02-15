@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import loginVec from "../../assets/images/login.jpg"
 import {Link, useNavigate} from "react-router-dom";
 import userStore from "../../store/userStore.js";
@@ -6,11 +6,23 @@ import SubmitBtn from "./SubmitBtn.jsx";
 import {motion} from "framer-motion";
 import toast from "react-hot-toast";
 import validationHelper from "../../helper/validationHelper.js";
+import {FaEye, FaEyeSlash} from "react-icons/fa";
 
 const LoginForm = () => {
 
-   const {loginFormValue,loginValueOnChange,userLoginRequest} = userStore();
+   const {loginFormValue,loginValueOnChange,
+       userLoginRequest} = userStore();
    const navigate = useNavigate();
+   const [passwordType,setPasswordType] = useState("password");
+
+    const togglePassword =()=>{
+        if(passwordType==="password")
+        {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
 
     const onFormSubmit = async ()=>{
         if(!validationHelper.isEmail(loginFormValue.email)){
@@ -46,8 +58,7 @@ const LoginForm = () => {
                     <p className={"my-4"}>Login to access your account</p>
                     <img src={loginVec} alt={""} className={"w-64 rounded-xl"}/>
                 </div>
-                <motion.div whileHover={{scale: 1.1}} transition={{type: "spring", stiffness: 400, damping: 17}}
-                    className="card w-96 bg-base-100 shadow-2xl">
+                <div className="card w-96 bg-base-100 shadow-xl ">
                     <div className="card-body">
                         <h2 className="card-title">LOGIN</h2>
 
@@ -60,28 +71,35 @@ const LoginForm = () => {
                                    onChange={(e)=>loginValueOnChange("email",e.target.value)}
                                    required/>
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="Your password" value={loginFormValue.password}
+                            <input type={passwordType} placeholder="Your password" value={loginFormValue.password}
                                    className="input input-bordered input-primary"
-                                   onChange={(e)=>loginValueOnChange("password",e.target.value)}
+                                   onChange={(e) => loginValueOnChange("password", e.target.value)}
                                    required/>
+                            <div className="input-group-btn absolute right-2 top-11">
+                                <button className="btn bg-base-100 hover:bg-base-100 border-none btn-sm"
+                                        onClick={togglePassword}>
+                                    {passwordType === "password" ? <FaEyeSlash/> :
+                                        <FaEye/>}
+                                </button>
+                            </div>
                         </div>
 
                         <div className="form-control mt-6">
-                          <SubmitBtn onClick={onFormSubmit} text={"Login"} />
+                            <SubmitBtn onClick={onFormSubmit} text={"Login"}/>
                         </div>
                         <div className="form-control my-6">
                             <p>Don't have an account?
                                 <Link to={"/create-account"} className={"font-bold hover:text-primary hover:underline"}>
-                                    Create Account
+                                Create Account
                                 </Link>
                             </p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
 
 
