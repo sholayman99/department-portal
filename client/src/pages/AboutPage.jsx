@@ -20,8 +20,9 @@ const AboutPage = () => {
                     about.map((item,i)=>{
                         return (
                             <div className={"card bg-base-100 lg:p-10 p-5 "} key={i}>
-                                <h4 className={"text-md md:text-lg font-semibold"}>{item['title']}:</h4>
-                                <p className={"text-gray-600 mt-2"}>{item['des']}</p>
+                                <h4 className={"text-md text-primary md:text-lg font-semibold"}>{item['title']}:</h4>
+                                <div className={"w-12 h-0.5 bg-primary"}></div>
+                                <p className={"text-gray-800 mt-2"}>{item['des']}</p>
                             </div>
                         )
                     })

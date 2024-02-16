@@ -9,6 +9,8 @@ const galleryModel = require("../models/galleryModel");
 const programmeModel = require("../models/programmeModel");
 const sliderModel = require("../models/sliderModel");
 const messageModel = require("../models/messageModel");
+const aboutModel = require("../models/aboutModel");
+const contactModel = require("../models/contactModel")
 
 //controller for slider
 const findSliderService = async ()=>{
@@ -55,6 +57,27 @@ const findMessageService = async ()=>{
     }
 }
 
+const aboutMessageService = async ()=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await aboutModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
+}
+
+const contactMessageService = async ()=>{
+    try {
+        let matchStage = {$match:{}};
+        let data = await contactModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
+}
 
 
-module.exports ={findSliderService,findProgrammeService,findGalleryService,findMessageService};
+
+module.exports ={findSliderService,findProgrammeService,findGalleryService,findMessageService,
+    aboutMessageService,contactMessageService};

@@ -44,6 +44,15 @@ const otherStore = create((set)=>({
         if(data['status']=== "success") {
             set({about:data['data']});
         }
+    },
+    contact:null,
+    contactRequest:async ()=>{
+        set({contact:null})
+        let res = await axios.get('/api/v1/contactMessage');
+        let data = await res['data'];
+        if(data['status']=== "success") {
+            set({contact:data['data']});
+        }
     }
 
 }))

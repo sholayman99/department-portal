@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import register from "../../assets/images/register.jpg";
 import {motion} from "framer-motion";
@@ -6,12 +6,22 @@ import SubmitBtn from "./SubmitBtn.jsx";
 import userStore from "../../store/userStore.js";
 import validationHelper from "../../helper/validationHelper.js";
 import toast from "react-hot-toast";
+import {FaEye, FaEyeSlash} from "react-icons/fa";
 
 
 const CreateAccountForm = () => {
     const navigate = useNavigate();
     const {accountFormValue,userAccountCreateRequest,accountFormOnChange} = userStore();
+    const [passwordType,setPasswordType] = useState("password");
 
+    const togglePassword =()=>{
+        if(passwordType==="password")
+        {
+            setPasswordType("text")
+            return;
+        }
+        setPasswordType("password")
+    }
     const onFormSubmit = async ()=>{
         if( validationHelper.isEmpty(accountFormValue.email) && !validationHelper.isEmail(accountFormValue.email)){
             toast.error("Valid Email Required")
@@ -59,7 +69,7 @@ const CreateAccountForm = () => {
                                    onChange={(e) => accountFormOnChange("email", e.target.value)}
                                    required/>
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -67,6 +77,13 @@ const CreateAccountForm = () => {
                                    className="input input-bordered input-primary"
                                    onChange={(e) => accountFormOnChange("password", e.target.value)}
                                    required/>
+                            <div className="input-group-btn absolute right-2 top-11">
+                                <button className="btn bg-base-100 hover:bg-base-100 border-none btn-sm"
+                                        onClick={togglePassword}>
+                                    {passwordType === "password" ? <FaEyeSlash/> :
+                                        <FaEye/>}
+                                </button>
+                            </div>
                         </div>
 
                         <div className="form-control mt-6">

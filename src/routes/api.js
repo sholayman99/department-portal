@@ -47,5 +47,7 @@ router.get("/findGallery" , otherController.findGallery);
 router.get("/findProgrammes" , otherController.findProgrammes);
 router.get("/findSliders" , otherController.findSliders);
 router.get("/findMessage" , otherController.findMessage);
+router.get('/aboutMessage' , otherController.aboutMessage);
+router.get('/contactMessage' , otherController.contactMessage);
 
 module.exports=router;

@@ -7,7 +7,18 @@
 const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
-        img:{type:String,required:true}
+        img1:{type:String,required:true},
+        img2:{type:String,required:true},
+        img3:{type:String,required:true},
+        img4:{type:String,required:true},
+        img5:{type:String,required:true},
+        img6:{type:String},
+        img7:{type:String},
+        img8:{type:String},
+        img9:{type:String},
+        img10:{type:String},
+
+
     },
     {timestamps:true , versionKey:false})
 

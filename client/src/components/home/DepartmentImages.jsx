@@ -8,18 +8,19 @@ const DepartmentImages = () => {
 
     let {imageList} = otherStore();
 
-    let images =[
-        {original:imageList[0]['img1'], thumbnail:imageList[0]['img1']},
-        {original:imageList[0]['img2'], thumbnail:imageList[0]['img2']},
-        {original:imageList[0]['img3'], thumbnail:imageList[0]['img3']},
-        {original:imageList[0]['img4'], thumbnail:imageList[0]['img4']},
-        {original:imageList[0]['img5'], thumbnail:imageList[0]['img5']},
-    ]
-
     if(imageList === null){
         return <SliderSkeleton />
     }
     else{
+
+        let images =[
+            {original:imageList[0]['img1'], thumbnail:imageList[0]['img1']},
+            {original:imageList[0]['img2'], thumbnail:imageList[0]['img2']},
+            {original:imageList[0]['img3'], thumbnail:imageList[0]['img3']},
+            {original:imageList[0]['img4'], thumbnail:imageList[0]['img4']},
+            {original:imageList[0]['img5'], thumbnail:imageList[0]['img5']},
+        ]
+
         return (
             <section className={"py-5"}>
                 <div className="lg:py-10 py-6 flex items-center justify-center flex-col">
