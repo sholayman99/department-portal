@@ -60,7 +60,7 @@ const otherStore = create((set)=>({
         let res = await axios.get(`/api/v1/legalMessage/${type}`);
         let data = await res['data'];
         if(data['status']=== "success") {
-            set({contact:data['data'][0]});
+            set({legal:data['data'][0]});
         }
     }
 

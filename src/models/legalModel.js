@@ -7,8 +7,6 @@
 const mongoose = require("mongoose");
 
 const dataSchema = mongoose.Schema({
-
-        title:{type:String,required:true},
         des:{type:String,required:true},
         type:{type:String,required:true}
     },
