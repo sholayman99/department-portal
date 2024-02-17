@@ -10,7 +10,8 @@ const programmeModel = require("../models/programmeModel");
 const sliderModel = require("../models/sliderModel");
 const messageModel = require("../models/messageModel");
 const aboutModel = require("../models/aboutModel");
-const contactModel = require("../models/contactModel")
+const contactModel = require("../models/contactModel");
+const legalModel = require("../models/legalModel");
 
 //controller for slider
 const findSliderService = async ()=>{
@@ -78,6 +79,18 @@ const contactMessageService = async ()=>{
 }
 
 
+const legalMessageService = async (req)=>{
+    try {
+        let type = req.params.type;
+        let matchStage = {$match:{type:type}};
+        let data = await legalModel.aggregate([matchStage]);
+        return {status:"success" , data:data};
+    }catch (e) {
+        return {status:"error" , data:e.message};
+    }
+}
+
+
 
 module.exports ={findSliderService,findProgrammeService,findGalleryService,findMessageService,
-    aboutMessageService,contactMessageService};
+    aboutMessageService,contactMessageService,legalMessageService};

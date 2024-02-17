@@ -6,7 +6,7 @@
 
 
 const {findSliderService,findProgrammeService,findGalleryService,
-    findMessageService,aboutMessageService,contactMessageService} = require("../services/otherService")
+    findMessageService,aboutMessageService,contactMessageService,legalMessageService} = require("../services/otherService")
 
 //controller for slider
 exports.findSliders = async (req,res)=>{
@@ -61,6 +61,16 @@ exports.aboutMessage = async (req,res)=>{
 
 exports.contactMessage = async (req,res)=>{
     let data = await contactMessageService();
+    if(data['status']==="success"){
+        res.status(200).json(data);
+    }else{
+        res.status(400).json(data);
+    }
+}
+
+
+exports.legalMessage = async (req,res)=>{
+    let data = await legalMessageService(req);
     if(data['status']==="success"){
         res.status(200).json(data);
     }else{

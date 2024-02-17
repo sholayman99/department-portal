@@ -53,7 +53,17 @@ const otherStore = create((set)=>({
         if(data['status']=== "success") {
             set({contact:data['data']});
         }
+    },
+    legal:null,
+    legalRequest:async(type)=>{
+        set({contact:null})
+        let res = await axios.get(`/api/v1/legalMessage/${type}`);
+        let data = await res['data'];
+        if(data['status']=== "success") {
+            set({contact:data['data'][0]});
+        }
     }
+
 
 }))
 

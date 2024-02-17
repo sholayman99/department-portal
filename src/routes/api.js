@@ -49,5 +49,6 @@ router.get("/findSliders" , otherController.findSliders);
 router.get("/findMessage" , otherController.findMessage);
 router.get('/aboutMessage' , otherController.aboutMessage);
 router.get('/contactMessage' , otherController.contactMessage);
+router.get('/legalMessage/:type' , otherController.legalMessage);
 
 module.exports=router;

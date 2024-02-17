@@ -13,6 +13,11 @@ import OtpPage from "./pages/OtpPage.jsx";
 import StudentProfilePage from "./pages/StudentProfilePage.jsx";
 import TeacherProfilePage from "./pages/TeacherProfilePage.jsx";
 import StaffProfilePage from "./pages/StaffProfilePage.jsx";
+import PrivacyPage from "./pages/PrivacyPage.jsx";
+import CookiePolicyPage from "./pages/CookiePolicyPage.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
+import FaqPage from "./pages/FaqPage.jsx";
+import FacilityPage from "./pages/FacilityPage.jsx";
 
 
 const App = () => {
@@ -35,6 +40,11 @@ const App = () => {
                     <Route path={"/student-profile/:id"} element={<StudentProfilePage /> } />
                     <Route path={"/teacher-profile/:id"} element={<TeacherProfilePage /> } />
                     <Route path={"/staff-profile/:id"} element={<StaffProfilePage /> } />
+                    <Route path={"/privacy-policy"} element={<PrivacyPage /> } />
+                    <Route path={"/cookie-policy"} element={<CookiePolicyPage /> } />
+                    <Route path={"/terms"} element={<TermsPage /> } />
+                    <Route path={"/faq"} element={<FaqPage /> } />
+                    <Route path={"/facility"} element={<FacilityPage /> } />
                 </Routes>
             </BrowserRouter>
         </div>
