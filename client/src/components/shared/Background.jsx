@@ -16,7 +16,11 @@ const Background = ({text,link}) => {
                     <div className="text-md text-gray-400 flex items-center justify-center breadcrumbs">
                         <ul>
                             <li><Link to={"/"}> <FaHome/>Home</Link></li>
-                            <li><Link to={`/${link}`}>{text}</Link></li>
+                            {
+                                link?( <li><Link to={`/${link}`}>{text}</Link></li>): (
+                                    <li><Link to={`/`}>{text}</Link></li>
+                                )
+                            }
                         </ul>
                     </div>
 

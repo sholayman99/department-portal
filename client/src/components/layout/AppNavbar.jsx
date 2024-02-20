@@ -41,6 +41,14 @@ const AppNavbar = () => {
                     " underline text-primary text-md" : "text-md"}>STUDENTS</NavLink>
             </li>
             <li>
+                <NavLink to={"/notices"} className={({isActive}) => isActive ? "font-semibold" +
+                    " underline text-primary text-md" : "text-md"}>NOTICES</NavLink>
+            </li>
+            <li>
+                <NavLink to={"/all-events"} className={({isActive}) => isActive ? "font-semibold" +
+                    " underline text-primary text-md" : "text-md"}>EVENTS</NavLink>
+            </li>
+            <li>
                 <NavLink to={"/about"} className={({isActive}) => isActive ? "font-semibold" +
                     " underline text-primary text-md" : "text-md"}>ABOUT</NavLink>
             </li>
@@ -50,19 +58,19 @@ const AppNavbar = () => {
             </li>
             <li>
                 {
-                    isLogin()?( <button  onClick={onLogout}
-                              className={'shadow-lg  border border-primary '+
-                            ' hover:scale-105 transition ease-in-out delay-150 '}>
+                    isLogin() ? (<button onClick={onLogout}
+                                         className={'shadow-lg  border border-primary ' +
+                                             ' hover:scale-105 transition ease-in-out delay-150 '}>
                                 LOGOUT
-                    </button>
-                        ):
+                            </button>
+                        ) :
                         (
-                        <NavLink to={"/login"} className={({isActive}) => isActive ?
-                            "font-semibold bg-neutral text-base-100 underline shadow-lg"+
-                            "hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"
-                            :
-                            "bg-neutral text-base-100 shadow-lg"+
-                            " hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"}
+                            <NavLink to={"/login"} className={({isActive}) => isActive ?
+                                "font-semibold bg-neutral text-base-100 underline shadow-lg" +
+                                "hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"
+                                :
+                                "bg-neutral text-base-100 shadow-lg" +
+                                " hover:scale-105 transition ease-in-out delay-150 hover:bg-gray-800"}
                             >LOGIN</NavLink>
                         )
                 }

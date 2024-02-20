@@ -18,6 +18,8 @@ import CookiePolicyPage from "./pages/CookiePolicyPage.jsx";
 import TermsPage from "./pages/TermsPage.jsx";
 import FaqPage from "./pages/FaqPage.jsx";
 import FacilityPage from "./pages/FacilityPage.jsx";
+import NoticePage from "./pages/NoticePage.jsx";
+import NoticeDetailPage from "./pages/NoticeDetailPage.jsx";
 
 
 const App = () => {
@@ -31,6 +33,8 @@ const App = () => {
                     <Route path={"/students"} element={ <StudentPage/> } />
                     <Route path={"/members"} element={ <DepMemberPage/> } />
                     <Route path={"/about"} element={ <AboutPage/> } />
+                    <Route path={"/notices"} element={ <NoticePage/> } />
+                    <Route path={"/notice-details/:id"} element={ <NoticeDetailPage/> } />
                     <Route path={"/contact"} element={ <ContactPage/> } />
                     <Route path={"/all-events"} element={ <AllEventsPage/> } />
                     <Route path={"/event-details/:id"} element={ <EventDetailsPage/> } />
