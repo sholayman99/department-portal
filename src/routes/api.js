@@ -11,6 +11,7 @@ const teacherController = require("../controllers/teacherController")
 const staffController = require("../controllers/staffController")
 const studentController = require("../controllers/studentController")
 const otherController = require("../controllers/otherController");
+const noticeController = require("../controllers/noticeController")
 const eventController = require("../controllers/eventController")
 const authVerifyMiddleware = require("../middlewares/authVerifyMiddleware")
 
@@ -40,9 +41,11 @@ router.get("/readStaffDetails/:id",authVerifyMiddleware, staffController.readSta
 router.get("/findEvents" , eventController.findEvents);
 router.get("/findEventDetails/:eventID" ,authVerifyMiddleware, eventController.findEventDetails);
 
+//notice
+router.get("/findNotices" , noticeController.findNotices );
+router.get("/findNoticeDetails/:id" , authVerifyMiddleware , noticeController.findNoticeDetails);
 
 //others
-
 router.get("/findGallery" , otherController.findGallery);
 router.get("/findProgrammes" , otherController.findProgrammes);
 router.get("/findSliders" , otherController.findSliders);
